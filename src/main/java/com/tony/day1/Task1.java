@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Task1 {
     /**
-     * 将链表翻转，输出新链表表头
+     * 将链表，输出新链表表头
      * @param args
      */
     public static void main(String[] args) {
