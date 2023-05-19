@@ -41,6 +41,7 @@ public class dataUser {
             //往前搜索
             for (int j = i - 1; j >= 0; j--) {
                 if (nums[i] > nums[j]) {
+                    //  值下标加1  位为 当前序号位元素
                     dp[i + 1] = Math.max(dp[j + 1] + 1, dp[i + 1]);
                     max = Math.max(dp[i + 1], max);
                 }
@@ -64,9 +65,17 @@ public class dataUser {
         int max = 1;
         for (int i = 0; i < nums.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
-
+                if (nums[i] > nums[j]) {
+                    //  值下标加1  位为 当前序号位元素
+                    dp[i + 1] = Math.max(dp[j + 1] + 1, dp[i + 1]);
+                    max = Math.max(dp[i + 1], max);
+                }
+            }
+            //前面的j都比i大
+            if (dp[i + 1] == 0) {
+                dp[i + 1] = 1;
             }
         }
-
+        return max;
     }
 }
